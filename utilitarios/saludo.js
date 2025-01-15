@@ -8,7 +8,24 @@ saludar=function(){
     mostrarTexto("lblResultado",mensajeBienvenida)
 
     mostrarImagen("imgSaludo","./imagenes/saludo.gif");
+
+    mostrarTextoEnCaja("txtNombre","");
 }
+
+
+mostrarTextoEnCaja=function(idComponente,mensaje){
+    let componente;
+    componente=document.getElementById(idComponente);
+    componente.value = mensaje;
+}
+
+
+mostrarTexto=function(idComponente,mensaje){
+    let componente;
+    componente=document.getElementById(idComponente);
+    componente.innerText = mensaje;
+}
+
 
 mostrarImagen=function(idComponente, rutaImagen){
     let componente;
@@ -16,11 +33,6 @@ mostrarImagen=function(idComponente, rutaImagen){
     componente.src = rutaImagen;
 }
 
-mostrarTexto=function(idComponente, mensaje){
-    let componente;
-    componente=document.getElementById(idComponente);
-    componente.innerText = mensaje;
-}
 
 
 recuperarTexto=function(idComponente){
