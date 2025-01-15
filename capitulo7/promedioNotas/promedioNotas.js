@@ -8,9 +8,17 @@ calcularPromedioNotas=function(){
     
     cambiarTexto("lblPromedio",promedioRedondeado);
 
-    if(promedioRedondeado>7){
-        cambiarImagen("imgResultado","./imagenes/exito.gif");
+    if(promedioRedondeado>0 && promedioRedondeado<5){
+        cambiarTexto("lblMensajeImagen","REPROBADO");
+        cambiarImagen("imgResultado","./imagenes/reprobado.gif");
+    }else if(promedioRedondeado>=5 && promedioRedondeado<=8){
+        cambiarTexto("lblMensajeImagen","BUEN TRABAJO");
+        cambiarImagen("imgResultado","./imagenes/buen_trabajo.gif");
+    }else if(promedioRedondeado>8 && promedioRedondeado<=10){
+        cambiarTexto("lblMensajeImagen","EXCELENTE");
+        cambiarImagen("imgResultado","./imagenes/excelente.gif");
     }else{
-        cambiarImagen("imgResultado","./imagenes/fracaso.gif")
+        cambiarTexto("lblMensajeImagen","DATOS INCORRECTOS");
+        cambiarImagen("imgResultado","./imagenes/incorrecto.gif");
     }
 }
