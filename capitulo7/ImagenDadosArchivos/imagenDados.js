@@ -20,9 +20,10 @@ modificarPuntos=function(numero){
     cambiarTexto("lblPuntos",puntos);
     if(puntos > 20){
         cambiarTexto("lblMensaje","GANASTE!!")
-        limpiar();
-        
+        setTimeout(limpiar, 2000); // Limpia después de 2 segundos
+        return; // detiene cualquier código posterior
     }
+
     //si el jugador obtiene +20 puntos
     //mostrar en pantalla un mensaje GANASTE!!
     //invocar a limpiar
@@ -36,7 +37,8 @@ modificarLanzamientos=function(){
     cambiarTexto("lblLanzamientos",lanzamientos);
     if(lanzamientos == 0){
         cambiarTexto("lblMensaje","GAME OVER")
-        limpiar();
+        setTimeout(limpiar, 2000); // Limpia después de 2 segundos
+        return; // detiene cualquier código posterior
     }
     //si lanzamientos llega a 0
     //mostrar en pantalla el mensaje GAME OVER
@@ -54,6 +56,8 @@ limpiar=function(){
     cambiarTexto("lblLanzamientos",lanzamientos);
    
     cambiarImagen("imgDado","");
+
+    cambiarTexto("lblMensaje", ""); // Limpia el mensaje final
 
 }
 
